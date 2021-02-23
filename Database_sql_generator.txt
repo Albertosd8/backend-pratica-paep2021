@@ -1,0 +1,61 @@
+create table users (
+	userid serial primary key,
+	name varchar(100) not null,
+	age int
+);
+ALTER TABLE backend.users ADD CONSTRAINT users_pk PRIMARY KEY (userid);
+
+
+CREATE TABLE backend.animals (
+	id int4 NULL,
+	intakedaate date NULL,
+	intakereason varchar NULL,
+	istransfer varchar NULL,
+	userid int4 NULL,
+	sheltercode varchar NULL,
+	identichipnumber varchar NULL,
+	animalname varchar NULL,
+	breedname varchar NULL,
+	basecolour varchar NULL,
+	speciesname varchar NULL,
+	animalage int4 NULL,
+	sexname varchar NULL,
+	"location" varchar NULL,
+	movementdate date NULL,
+	movementtype varchar NULL,
+	istrial varchar NULL,
+	returndate date NULL,
+	returnedreason varchar NULL,
+	deceaseddate date NULL,
+	deceasedreason varchar NULL,
+	diedoffshelter varchar NULL,
+	puttosleep varchar NULL,
+	isdoa varchar NULL
+);
+ALTER TABLE backend.animals ADD CONSTRAINT animals_pk PRIMARY KEY (id);+
+
+
+ALTER TABLE backend.animals ADD CONSTRAINT animals_fk FOREIGN KEY (userid) REFERENCES backend.users(userid);
+
+
+// Users data sql statements
+INSERT INTO backend.users
+(userid, "name", age)
+VALUES(0, 'Alberto', 21);
+
+INSERT INTO backend.users
+(userid, "name", age)
+VALUES(1, 'Ingrid', 23);
+
+INSERT INTO backend.users
+(userid, "name", age)
+VALUES(2, 'Santiago', 21);
+
+INSERT INTO backend.users
+(userid, "name", age)
+VALUES(3, 'Sophia', 25);
+
+INSERT INTO backend.users
+(userid, "name", age)
+VALUES(4, 'Hugo', 30);
+
